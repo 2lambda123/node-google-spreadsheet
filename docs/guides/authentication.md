@@ -1,4 +1,32 @@
-# Authentication
+# Authentication Methods Overview
+
+For detailed instructions on different authentication methods, refer to the following files:
+- [Service Account Authentication](docs/guides/service-account-authentication.md)
+- [OAuth 2.0 Authentication](docs/guides/oauth-authentication.md)
+- [Application Default Credentials (ADC) Authentication](docs/guides/adc-authentication.md)
+- [API Key Authentication](docs/guides/api-key-authentication.md)
+- [Raw Token Authentication](docs/guides/raw-token-authentication.md) Methods Overview
+
+For detailed instructions on different authentication methods, refer to the following files:
+- [Service Account Authentication](docs/guides/service-account-authentication.md)
+- [OAuth 2.0 Authentication](docs/guides/oauth-authentication.md)
+- [Application Default Credentials (ADC) Authentication](docs/guides/adc-authentication.md)
+- [API Key Authentication](docs/guides/api-key-authentication.md)
+- [Raw Token Authentication](docs/guides/raw-token-authentication.md)
+
+## Authentication Methods Overview
+
+(API key access does not need any scopes selected - as it is read only)
+
+In most cases, I'd suggest using the following for your list of scopes:
+`['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive.file']`
+
+But if you need more control, this is the full list of relevant scopes you might want to use:
+- `https://www.googleapis.com/auth/spreadsheets` - read/write access to all Sheets docs
+- `https://www.googleapis.com/auth/spreadsheets.readonly` - read-only access to all Sheets docs
+- `https://www.googleapis.com/auth/drive` - read/write access to all Google Drive files
+- `https://www.googleapis.com/auth/drive.readonly` - read-only access to all Google Drive files
+- `https://www.googleapis.com/auth/drive.file` - read/write access to only the specific Google Drive files used with this "app"
 
 This module relies heavily on the [google-auth-library](https://github.com/googleapis/google-auth-library-nodejs) module to handle most authentication needs.
 
